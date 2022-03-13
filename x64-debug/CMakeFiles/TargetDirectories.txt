@@ -1,0 +1,5 @@
+C:/Users/chris/source/repos/ProjectVillage/out/build/x64-debug/CMakeFiles/edit_cache.dir
+C:/Users/chris/source/repos/ProjectVillage/out/build/x64-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/chris/source/repos/ProjectVillage/out/build/x64-debug/ProjectVillage/CMakeFiles/ProjectVillage.dir
+C:/Users/chris/source/repos/ProjectVillage/out/build/x64-debug/ProjectVillage/CMakeFiles/edit_cache.dir
+C:/Users/chris/source/repos/ProjectVillage/out/build/x64-debug/ProjectVillage/CMakeFiles/rebuild_cache.dir
