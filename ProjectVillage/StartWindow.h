@@ -6,7 +6,7 @@ class StartWindow {
     private:
         SDL_Window* startIntroMenu() {
             SDL_Window* introMenu = SDL_CreateWindow(
-                "Startup", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 300, 600, SDL_WINDOW_VULKAN
+                "Startup", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 400, 600, SDL_WINDOW_VULKAN
             );
             return introMenu;
         }
@@ -19,4 +19,7 @@ class StartWindow {
     public:
         StartWindow::StartWindow();
 };
-
+struct Button {
+        void (*callback)(void* data);
+        void* user_data;
+};
