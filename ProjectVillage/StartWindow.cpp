@@ -13,20 +13,24 @@ StartWindow::StartWindow() {
     SDL_Window * currentWindow = NULL;
 	SDL_Event e;
 	currentWindow = startIntroMenu();
-    SDL_Rect button;
-    button.x = 400/2 - 384/2;
-    button.y = 500;
-    button.w = 384;
-    button.h = 72;
-    SDL_Rect buttonE;
-    buttonE.x = 400 / 2 + 384 / 2;
-    buttonE.y = 572;
-    buttonE.w = 384;
-    buttonE.h = 72;
+    SDL_Rect button[3];
+    button[0].x = 400/2 - 384/2;
+    button[0].y = 500;
+    button[0].w = 384;
+    button[0].h = 72;
+
+    button[1].x = 0;
+    button[1].y = 0;
+    button[1].w = 384;
+    button[1].h = 72;
+
+    button[2].x = 0;
+    button[2].y = 72;
+    button[2].w = 384;
+    button[2].h = 72;
 
     SDL_Renderer* renderer = SDL_CreateRenderer(currentWindow, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_TARGETTEXTURE);
 
-    //Now render to the texture
     SDL_Surface* surface = IMG_Load("./Assets/button.png");
 
     SDL_Texture* texture = SDL_CreateTextureFromSurface(renderer, surface);
@@ -34,7 +38,8 @@ StartWindow::StartWindow() {
     surface = NULL;
 
     //Make a target texture to render too
-    SDL_Texture* texTarget = SDL_CreateTexture(renderer, SDL_PIXELFORMAT_RGBA8888, SDL_TEXTUREACCESS_TARGET, button.w, button.h);
+
+    SDL_Texture* texTarget = SDL_CreateTexture(renderer, SDL_PIXELFORMAT_RGBA8888, SDL_TEXTUREACCESS_TARGET, button[0].w, button[0].h);
 
     //Now render to the texture
     SDL_SetRenderTarget(renderer, texTarget);
@@ -48,12 +53,16 @@ StartWindow::StartWindow() {
         while (SDL_PollEvent(&e)) {
             switch (e.type) {
             case SDL_MOUSEBUTTONDOWN:
+                SDL_RenderCopy(renderer, texture, &button[1], &button[0]);
                 if (e.button.button == SDL_BUTTON_LEFT) {
                     int x = e.button.x;
                     int y = e.button.y;
-                    if (x > button.x && x < button.w + button.x &&
-                        y > button.y && y < button.h + button.y ) {
+                    if (x > button[0].x && x < button[0].w + button[0].x &&
+                        y > button[0].y && y < button[0].h + button[0].y ) {
                         cout << "button" << endl;
+                        SDL_RenderClear(renderer);
+                        SDL_RenderCopy(renderer, texture, &button[2], &button[0]);
+                        SDL_RenderPresent(renderer);
                     }
                 }
                 else
@@ -68,7 +77,7 @@ StartWindow::StartWindow() {
             }
         }
         SDL_RenderClear(renderer);
-        SDL_RenderCopy(renderer, texture, NULL, &button);
+        SDL_RenderCopy(renderer, texture, &button[1], &button[0]);
         SDL_RenderPresent(renderer);
     }
     

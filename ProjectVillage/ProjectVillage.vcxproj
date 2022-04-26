@@ -318,7 +318,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="C:\Users\chris\source\repos\ProjectVillage\ProjectVillage\ProjectVillage.cpp" />
-    <ClCompile Include="render.cpp" />
+    <ClCompile Include="Renderer.cpp" />
     <ClCompile Include="StartWindow.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -330,7 +330,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="render.h" />
+    <ClInclude Include="Renderer.h" />
     <ClInclude Include="StartWindow.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

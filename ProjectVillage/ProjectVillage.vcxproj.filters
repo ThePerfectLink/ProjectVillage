@@ -4,8 +4,8 @@
     <ClCompile Include="C:\Users\chris\source\repos\ProjectVillage\ProjectVillage\ProjectVillage.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="render.cpp" />
     <ClCompile Include="StartWindow.cpp" />
+    <ClCompile Include="Renderer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="C:\Users\chris\source\repos\ProjectVillage\ProjectVillage\CMakeLists.txt" />
@@ -16,7 +16,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="render.h" />
     <ClInclude Include="StartWindow.h" />
+    <ClInclude Include="Renderer.h" />
   </ItemGroup>
 </Project>
